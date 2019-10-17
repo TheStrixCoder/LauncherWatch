@@ -14,11 +14,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.support.wearable.view.WearableListView;
+import com.android.support.wearable.myView.WearableListView;
+import com.android.support.wearable.myView.WearableListView.OnItemClickListener;
 import com.bid.launcherwatch.AppListCustomUtil.AppInfo;
 import java.util.ArrayList;
 
-public class AppListUtil implements WearableListView.OnClickListener {
+public class AppListUtil implements OnItemClickListener {
     private AppListViewAdapter mAdaper;
     /* access modifiers changed from: private */
     public ArrayList<AppInfo> mApps;
@@ -26,10 +27,7 @@ public class AppListUtil implements WearableListView.OnClickListener {
     private Context mContext;
     private PackageManager mPackageManager = this.mContext.getPackageManager();
 
-    @Override
-    public void onClick(View view) {
 
-    }
 
     class AppArcListViewAdapter extends Adapter {
         /* access modifiers changed from: private */

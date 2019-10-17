@@ -1,5 +1,6 @@
 package com.bid.launcherwatch;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.Application;
@@ -282,8 +283,8 @@ public class WatchApp extends Application {
                     data_installed4.title_name = "downloadclock";
                     data_installed4.type = "downloadclock";
                     data_installed4.pkg = onlineClockSkinLocalNode.getPackageName();
-                    data_installed4.filePath = "/data/data/com.mediatek.watchapp//WiiwearClockSkin/" + onlineClockSkinLocalNode.getPackageName();
-                    data_installed4.previewPath = "/data/data/com.mediatek.watchapp//WiiwearClockSkin/preview/" + onlineClockSkinLocalNode.getPackageName() + ".png";
+                    data_installed4.filePath = "/data/data/com.bid.launcherwatch//WiiwearClockSkin/" + onlineClockSkinLocalNode.getPackageName();
+                    data_installed4.previewPath = "/data/data/com.bid.launcherwatch//WiiwearClockSkin/preview/" + onlineClockSkinLocalNode.getPackageName() + ".png";
                     data_installed4.img_preview = null;
                     minstalledClocks.add(data_installed4);
                     cur.moveToNext();
@@ -572,7 +573,7 @@ public class WatchApp extends Application {
     private static boolean isServiceRunning(Context context) {
         for (RunningServiceInfo service : ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE)).getRunningServices(Integer.MAX_VALUE)) {
             if (!"com.wiiteck.clockpreviewer.online.ClockSkinDownloadService".equals(service.service.getClassName())) {
-                if ("com.mediatek.watchapp.online.ClockSkinDownloadService".equals(service.service.getClassName())) {
+                if ("com.bid.launcherwatch.online.ClockSkinDownloadService".equals(service.service.getClassName())) {
                 }
             }
             return true;

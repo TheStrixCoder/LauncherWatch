@@ -139,7 +139,7 @@ public class NotificationFragment extends Fragment {
         this.mVibrator = (Vibrator) this.mContext.getSystemService(Context.VIBRATOR_SERVICE);
         this.mNoMan = Stub.asInterface(ServiceManager.getService(Context.NOTIFICATION_SERVICE));
         try {
-            registerAsSystemService(this.mContext, new ComponentName(this.mContext.getPackageName(), getClass().getCanonicalName()), ns);
+            //registerAsSystemService(this.mContext, new ComponentName(this.mContext.getPackageName(), getClass().getCanonicalName()), ns);
         } catch (Exception e) {
             Log.e(TAG, "Cannot register listener", e);
         }
@@ -149,49 +149,49 @@ public class NotificationFragment extends Fragment {
         getActivity().registerReceiver(this.mReceiver, filter);
     }
 
-    private void registerAsSystemService(Context mContext, ComponentName componentName, NotificationService i) {
-        String className = "android.service.notification.NotificationListenerService";
-        try {
-
-            @SuppressWarnings("rawtypes")
-            Class NotificationListenerService = Class.forName(className);
-
-            //Parameters Types
-            //you define the types of params you will pass to the method
-            @SuppressWarnings("rawtypes")
-            Class[] paramTypes= new Class[3];
-            paramTypes[0]= Context.class;
-            paramTypes[1]= ComponentName.class;
-            paramTypes[2] = int.class;
-
-            Method register = NotificationListenerService.getMethod("registerAsSystemService", paramTypes);
-
-            //Parameters of the registerAsSystemService method (see official doc for more info)
-            Object[] params= new Object[3];
-            Context ctx = null;
-            params[0]= mContext;
-            //error1
-
-            params[1]= new ComponentName(mContext.getPackageName(), mContext.getClass().getCanonicalName());
-            params[2]= -1; // All user of the device, -2 if only current user
-            // finally, invoke the function on our instance
-            register.invoke(i, params);
-
-        } catch (ClassNotFoundException e) {
-            Log.e(TAG, "Class not found", e);
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            Log.e(TAG, "No such method", e);
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            Log.e(TAG, "InvocationTarget", e);
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            Log.e(TAG, "Illegal access", e);
-            e.printStackTrace();
-        }
-
-    }
+//    private void registerAsSystemService(Context mContext, ComponentName componentName, NotificationService i) {
+//        String className = "android.service.notification.NotificationListenerService";
+//        try {
+//
+//            @SuppressWarnings("rawtypes")
+//            Class NotificationListenerService = Class.forName(className);
+//
+//            //Parameters Types
+//            //you define the types of params you will pass to the method
+//            @SuppressWarnings("rawtypes")
+//            Class[] paramTypes= new Class[3];
+//            paramTypes[0]= Context.class;
+//            paramTypes[1]= ComponentName.class;
+//            paramTypes[2] = int.class;
+//
+//            Method register = NotificationListenerService.getMethod("registerAsSystemService", paramTypes);
+//
+//            //Parameters of the registerAsSystemService method (see official doc for more info)
+//            Object[] params= new Object[3];
+//            Context ctx = null;
+//            params[0]= mContext;
+//            //error1
+//
+//            params[1]= new ComponentName(mContext.getPackageName(), mContext.getClass().getCanonicalName());
+//            params[2]= -1; // All user of the device, -2 if only current user
+//            // finally, invoke the function on our instance
+//            register.invoke(i, params);
+//
+//        } catch (ClassNotFoundException e) {
+//            Log.e(TAG, "Class not found", e);
+//            e.printStackTrace();
+//        } catch (NoSuchMethodException e) {
+//            Log.e(TAG, "No such method", e);
+//            e.printStackTrace();
+//        } catch (InvocationTargetException e) {
+//            Log.e(TAG, "InvocationTarget", e);
+//            e.printStackTrace();
+//        } catch (IllegalAccessException e) {
+//            Log.e(TAG, "Illegal access", e);
+//            e.printStackTrace();
+//        }
+//
+//    }
     public void onDestroyView() {
         super.onDestroyView();
     }

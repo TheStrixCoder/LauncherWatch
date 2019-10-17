@@ -71,7 +71,7 @@ public class CustomAnalogClock6 extends View {
         this(context, attrs, 0);
     }
 
-    @SuppressLint({"ResourceAsColor"})
+    //@SuppressLint({"ResourceAsColor", "ResourceType"})
     public CustomAnalogClock6(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.mHandler = new Handler();
@@ -80,10 +80,10 @@ public class CustomAnalogClock6 extends View {
         this.mTickerStopped = false;
         Resources r = getContext().getResources();
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CustomClock, defStyle, 0);
-        this.mDial = a.getDrawable(0);
-        this.mHourHand = a.getDrawable(1);
-        this.mMinuteHand = a.getDrawable(2);
-        this.ShowDate = a.getBoolean(8, false);
+        this.mDial = a.getDrawable(R.styleable.CustomClock_dial);
+        this.mHourHand = a.getDrawable(R.styleable.CustomClock_hand_hour);
+        this.mMinuteHand = a.getDrawable(R.styleable.CustomClock_hand_minute);
+        this.ShowDate = a.getBoolean(R.styleable.CustomClock_date, false);
         if (this.mDial == null) {
             this.mDial = r.getDrawable(R.drawable.watch_biaopan);
         }
