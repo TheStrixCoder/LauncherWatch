@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="ring" android:innerRadiusRatio="2.4" android:thicknessRatio="25">
+            <gradient android:startColor="#4f4f2f" android:endColor="#7fff00" android:type="sweep" android:centerX="0.3" android:centerColor="#42426f"/>
+        </shape>
+    </item>
+</layer-list>

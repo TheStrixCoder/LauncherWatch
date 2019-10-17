@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@drawable/round_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.bid.launcherwatch.StepsMeterView android:id="@+id/steps_meter" android:padding="30dp" android:layout_width="match_parent" android:layout_height="match_parent" android:max="100" android:indeterminate="false" app:progress_unreached_color="#ff999999" app:progress_reached_color="#ffff5e1b" app:progress_reached_bar_height="5dp" app:progress_unreached_bar_height="5dp"/>
+    <TextView android:textSize="70sp" android:textColor="#ffffffff" android:gravity="center" android:id="@+id/calorie_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/calorie_default" android:layout_centerInParent="true" android:fontFamily="sans-serif-thin"/>
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" app:srcCompat="@drawable/sport_calorie_icon" android:layout_below="@+id/calorie_text" android:layout_centerHorizontal="true"/>
+    <TextView android:textSize="26sp" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20dp" android:text="@string/calories_unit" android:layout_above="@+id/calorie_text" android:layout_centerHorizontal="true" android:fontFamily="sans-serif-thin"/>
+</RelativeLayout>

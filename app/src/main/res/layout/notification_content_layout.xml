@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/card_background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.bid.launcherwatch.NotificationScrollView android:layout_gravity="center" android:id="@+id/card_scroll_view" android:layout_width="match_parent" android:layout_height="match_parent" android:drawSelectorOnTop="false" android:fastScrollEnabled="false" android:overScrollMode="never">
+        <FrameLayout android:id="@+id/card_scroll_content" android:focusable="true" android:clickable="true" android:addStatesFromChildren="true" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@+id/card_frame1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/note_padding_gap" android:layout_marginTop="@dimen/note_padding_gap" android:layout_marginRight="@dimen/note_padding_gap" android:layout_marginBottom="@dimen/note_padding_gap">
+                <RelativeLayout android:layout_gravity="top|center_vertical|center_horizontal|center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="50px" android:layout_marginTop="20px" android:layout_marginRight="50px">
+                    <ImageView android:id="@+id/type_icon" android:layout_width="68dp" android:layout_height="68dp" android:layout_alignParentLeft="true"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                        <TextView android:textSize="26sp" android:textColor="#ffffffff" android:gravity="center" android:id="@+id/type_text" android:layout_width="130dp" android:layout_height="wrap_content"/>
+                        <Chronometer android:textAppearance="@style/NotificationEventTime" android:id="@+id/chronometer" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_marginStart="100dp" android:layout_marginEnd="16dp"/>
+                        <com.bid.launcherwatch.DateTimeView android:textAppearance="@style/NotificationEventTime" android:gravity="center" android:id="@+id/time" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_centerInParent="true"/>
+                    </LinearLayout>
+                    <ImageView android:id="@+id/icon" android:layout_width="60dp" android:layout_height="60dp" android:layout_marginTop="5dp" android:scaleType="centerCrop" android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <TextView android:textSize="28dp" android:textColor="#ffffffff" android:ellipsize="end" android:gravity="center" android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_marginStart="6dp" android:layout_marginEnd="6dp"/>
+                <TextView android:textSize="28dp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@+id/text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="16dp" android:maxLines="3" android:singleLine="false" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
+                <ImageButton android:id="@+id/options" app:srcCompat="@drawable/notification_expand" android:text="@string/options" style="@style/NotificationButtonWithOutBG"/>
+                <Button android:id="@+id/action1" android:visibility="gone" style="@style/NotificationButton"/>
+                <Button android:id="@+id/action2" android:visibility="gone" style="@style/NotificationButton"/>
+                <Button android:id="@+id/action3" android:visibility="gone" style="@style/NotificationButton"/>
+                <Button android:id="@+id/open" android:visibility="gone" android:text="@string/open" style="@style/NotificationButton"/>
+                <Button android:id="@+id/close" android:visibility="gone" android:text="@string/close" style="@style/NotificationRoundButton"/>
+            </LinearLayout>
+        </FrameLayout>
+    </com.bid.launcherwatch.NotificationScrollView>
+</FrameLayout>

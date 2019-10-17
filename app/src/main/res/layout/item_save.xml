@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:custom="http://schemas.android.com/apk/res-auto/com.mediatek.watchapp" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp" android:layout_height="match_parent"
+    tools:ignore="ResAuto">
+    <com.bid.launcherwatch.CustomDigitalClockSave android:id="@+id/analog_appwidget" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="0px" custom:dial="@drawable/watch_clock_save"/>
+</RelativeLayout>

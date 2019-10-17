@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@drawable/round_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.bid.launcherwatch.cleananimation.MovingDotView android:id="@+id/main_movingView" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</RelativeLayout>

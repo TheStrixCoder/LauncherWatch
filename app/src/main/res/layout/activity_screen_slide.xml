@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:custom="http://schemas.android.com/apk/res-auto/com.bid.launcherwatch" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:ignore="ResAuto">
+    <FrameLayout android:id="@+id/bottom_clock" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ProgressBar android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </FrameLayout>
+    <View android:id="@+id/top_black" android:background="@color/gray" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <com.bid.launcherwatch.MainVerticalViewPager android:id="@+id/pager" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <com.bid.launcherwatch.CustomDigitalClockSave android:id="@+id/clock_view" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="0px" custom:dial="@drawable/watch_clock_save"/>
+</FrameLayout>

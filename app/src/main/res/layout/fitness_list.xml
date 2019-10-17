@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center" android:background="@color/black" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.android.support.wearable.myView.WearableRecyclerViewCustom android:id="@+id/recycler_launcher_view" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent"/>
+</RelativeLayout>

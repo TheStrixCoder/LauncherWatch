@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.bid.launcherwatch"
+        minSdkVersion 24
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions{
+        disable 'MissingTranslation'
+    }
+}
+
+dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation 'com.android.support:appcompat-v7:25.1.1'
+//    implementation 'com.android.support:design:25.0.0'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    provided files('frameworklibs/framework.jar')
+    // https://mvnrepository.com/artifact/com.google.android.support/wearable
+    //compile group: 'com.google.android.support', name: 'wearable', version: '2.2.0'
+    //compileOnly 'com.google.android.support:wearable:2.0.2'
+    //compileOnly 'com.google.android.wearable:wearable:2.0.2'
+    // https://mvnrepository.com/artifact/com.google.android.support/wearable
+
+    //implementation group: 'com.google.android.support', name: 'wearable', version: '2.5.0'
+    implementation 'com.google.android.support:wearable:2.5.0'
+    implementation files('libs/universal-image-loader-1.9.5.jar')
+    implementation 'com.android.support:appcompat-v7:25.1.1'
+}

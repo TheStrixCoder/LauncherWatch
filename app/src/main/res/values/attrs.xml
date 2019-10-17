@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <attr name="layout_widthPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_heightPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginLeftPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginTopPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginRightPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginBottomPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginStartPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginEndPercent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="layout_aspectRatio" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="dialogTitle" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="dialogMessage" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="dialogIcon" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="showPositiveDialogButton" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="showNegativeDialogButton" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="showDialogWhenTurningOn" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="showDialogWhenTurningOff" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="minTextSize" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="maxTextSize" format="dimension">-->
+<!--    </attr>-->
+<!--&lt;!&ndash;    <attr name="layout_box">&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="all" value="15" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="bottom" value="8" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="left" value="1" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="right" value="4" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="top" value="2" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--    <attr name="circle_color" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="circle_radius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="circle_radius_pressed" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="circle_border_width" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="circle_border_color" format="color">-->
+<!--    </attr>-->
+<!--&lt;!&ndash;    <attr name="circle_border_cap">&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="butt" value="0" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="round" value="1" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="square" value="2" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--    <attr name="circle_padding" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="shadow_width" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="image_circle_percentage" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="image_horizontal_offcenter_percentage" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="image_tint" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="circle_radius_percent" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="circle_radius_pressed_percent" format="fraction">-->
+<!--    </attr>-->
+<!--&lt;!&ndash;    <attr name="square_dimen">&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="height" value="1" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="none" value="0" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="width" value="2" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--&lt;!&ndash;    <attr name="imageScaleMode">&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="center" value="1" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="fit" value="0" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--    <attr name="buttonRippleColor" format="reference|color">-->
+<!--    </attr>-->
+<!--    <attr name="pressedButtonTranslationZ" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="backgroundColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="backgroundDrawable" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="textColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="titleColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="textTypeface" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="titleTypeface" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="textSize" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="titleSize" format="dimension">-->
+<!--    </attr>-->
+<!--&lt;!&ndash;    <attr name="iconColor" format="dimension">&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--    <attr name="borderColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="borderRadius" format="dimension">-->
+<!--    </attr>-->
+<!--&lt;!&ndash;    <attr name="borderStyle">&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="none" value="0" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="dashed" value="2" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="solid" value="1" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--    <attr name="borderDashWidth" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="borderDashGap" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="borderWidth" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="rangedValueRingWidth" format="dimension">-->
+<!--    </attr>-->
+<!--&lt;!&ndash;    <attr name="rangedValuePrimaryColor" format="dimension">&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--&lt;!&ndash;    <attr name="rangedValueSecondaryColor" format="dimension">&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--    <attr name="highlightColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="update_interval" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="dotSpacing" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="dotRadius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="dotRadiusSelected" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="dotColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="dotColorSelected" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="dotFadeWhenIdle" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="dotFadeOutDelay" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="dotFadeOutDuration" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="dotFadeInDuration" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="dotShadowColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="dotShadowRadius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="dotShadowDx" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="dotShadowDy" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotSpacing" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotRadius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotRadiusSelected" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotColorSelected" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotFadeWhenIdle" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotFadeOutDelay" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotFadeOutDuration" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotFadeInDuration" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotShadowColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotShadowRadius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotShadowDx" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="pageIndicatorDotShadowDy" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="color_sequence" format="reference|color">-->
+<!--    </attr>-->
+<!--    <attr name="rectLayout" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="roundLayout" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="action_menu" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="drawer_title" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="show_overflow_in_peek" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="neutralButtonText" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="positiveButtonIcon" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="neutralButtonIcon" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="negativeButtonIcon" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="peek_view" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="drawer_content" format="reference">-->
+<!--    </attr>-->
+<!--&lt;!&ndash;    <attr name="layout_gravityRound">&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="bottom" value="50" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="left" value="3" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="right" value="5" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="top" value="30" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="center" value="11" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="center_horizontal" value="1" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="center_vertical" value="10" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="clip_horizontal" value="8" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="clip_vertical" value="80" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="end" value="800005" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="fill" value="77" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="fill_horizontal" value="7" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="fill_vertical" value="70" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <flag name="start" value="800003" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--    <attr name="layout_widthRound" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="layout_heightRound" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginRound" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginLeftRound" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginTopRound" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginRightRound" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="layout_marginBottomRound" format="dimension">-->
+<!--    </attr>-->
+<!--&lt;!&ndash;    <attr name="navigation_style">&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="multi_page" value="1" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <enum name="single_page" value="0" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </attr>&ndash;&gt;-->
+<!--    <attr name="bezel_width" format="fraction">-->
+<!--    </attr>-->
+<!--    <attr name="circular_scrolling_gesture_enabled" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="scroll_degrees_per_screen" format="float">-->
+<!--    </attr>-->
+<!--    <attr name="layoutManager" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="spanCount" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="reverseLayout" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="stackFromEnd" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="progress_unreached_color" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="progress_reached_color" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="progress_reached_bar_height" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="progress_unreached_bar_height" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="progress_text_size" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="progress_text_color" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="progress_text_offset" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="progress_text_visibility">-->
+<!--        <enum name="invisible" value="1" />-->
+<!--        <enum name="visible" value="0" />-->
+<!--    </attr>-->
+<!--    <attr name="radius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="borderRadiusCustom" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="type">-->
+<!--        <enum name="round" value="1" />-->
+<!--        <enum name="circle" value="0" />-->
+<!--    </attr>-->
+<!--    <attr name="dial" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="hand_hour" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="hand_minute" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="hand_second" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="center" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="battery" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="week" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="showweek" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="showdate" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="HeartRate" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="MyView_battery" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="hour" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="minute" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="second" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="date" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="step" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="wether" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="month" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="yuan" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="mSmall01" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="mSmall02" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="mSmall03" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="Sun" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="mon" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="tue" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="wed" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="thu" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="fri" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="sat" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="ci_width" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="ci_height" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="ci_margin" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="ci_animator" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="ci_animator_reverse" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="ci_drawable" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="ci_drawable_unselected" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="topPackageName" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="topClassName" format="string">-->
+<!--    </attr>-->
+<!--    <attr name="topOrder" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="md_dot_count" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="md_center_dot_radius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="md_center_dot_back" format="reference">-->
+<!--    </attr>-->
+<!--    <attr name="md_dot_color" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="md_dot_max_radius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="md_dot_min_radius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="md_dot_max_speed" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="md_dot_min_speed" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="md_text_size" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="md_text_color" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="md_btn_text_color" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="md_animator_duration" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="cropGuidelines">-->
+<!--        <enum name="off" value="0" />-->
+<!--        <enum name="on" value="2" />-->
+<!--        <enum name="onTouch" value="1" />-->
+<!--    </attr>-->
+<!--    <attr name="cropScaleType">-->
+<!--        <enum name="center" value="1" />-->
+<!--        <enum name="centerCrop" value="2" />-->
+<!--        <enum name="centerInside" value="3" />-->
+<!--        <enum name="fitCenter" value="0" />-->
+<!--    </attr>-->
+<!--    <attr name="cropShape">-->
+<!--        <enum name="oval" value="1" />-->
+<!--        <enum name="rectangle" value="0" />-->
+<!--    </attr>-->
+<!--    <attr name="cropAutoZoomEnabled" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="cropMaxZoom" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="cropMultiTouchEnabled" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="cropFixAspectRatio" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="cropAspectRatioX" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="cropAspectRatioY" format="integer">-->
+<!--    </attr>-->
+<!--    <attr name="cropInitialCropWindowPaddingRatio" format="float">-->
+<!--    </attr>-->
+<!--    <attr name="cropBorderLineThickness" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropBorderLineColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="cropBorderCornerThickness" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropBorderCornerOffset" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropBorderCornerLength" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropBorderCornerColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="cropGuidelinesThickness" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropGuidelinesColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="cropBackgroundColor" format="color">-->
+<!--    </attr>-->
+<!--    <attr name="cropSnapRadius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropTouchRadius" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropShowCropOverlay" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="cropShowProgressBar" format="boolean">-->
+<!--    </attr>-->
+<!--    <attr name="cropMinCropWindowWidth" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropMinCropWindowHeight" format="dimension">-->
+<!--    </attr>-->
+<!--    <attr name="cropMinCropResultWidthPX" format="float">-->
+<!--    </attr>-->
+<!--    <attr name="cropMinCropResultHeightPX" format="float">-->
+<!--    </attr>-->
+<!--    <attr name="cropMaxCropResultWidthPX" format="float">-->
+<!--    </attr>-->
+<!--    <attr name="cropMaxCropResultHeightPX" format="float">-->
+<!--    </attr>-->
+
+    <attr name="borderRadiusCustom" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadiusCustom" />
+        <attr name="type" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomClock">
+        <attr name="dial" format="reference"/>
+        <attr name="hand_hour" format="reference"/>
+        <attr name="hand_minute" format="reference"/>
+        <attr name="hand_second" format="reference"/>
+        <attr name="center" format="reference"/>
+        <attr name="battery" format="reference"/>
+        <attr name="week" format="reference"/>
+        <attr name="showweek" format="boolean"/>
+        <attr name="showdate" format="boolean"/>
+        <attr name="HeartRate" format="reference"/>
+        <attr name="MyView_battery" format="reference"/>
+
+        <attr name="hour" format="reference"/>
+        <attr name="minute" format="reference"/>
+        <attr name="second" format="reference"/>
+        <attr name="date" format="reference"/>
+        <attr name="step" format="reference"/>
+        <attr name="wether" format="reference"/>
+        <attr name="month" format="reference"/>
+        <attr name="yuan" format="reference"/>
+
+
+        <attr name="mSmall01" format="reference"/>
+        <attr name="mSmall02" format="reference"/>
+        <attr name="mSmall03" format="reference"/>
+
+        <attr name="Sun" format="reference"/>
+        <attr name="mon" format="reference"/>
+        <attr name="tue" format="reference"/>
+        <attr name="wed" format="reference"/>
+        <attr name="thu" format="reference"/>
+        <attr name="fri" format="reference"/>
+        <attr name="sat" format="reference"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="PageCircleIndicator">
+        <attr name="ci_width" format="dimension"/>
+        <attr name="ci_height" format="dimension"/>
+        <attr name="ci_margin" format="dimension"/>
+        <attr name="ci_animator" format="reference"/>
+        <attr name="ci_animator_reverse" format="reference"/>
+        <attr name="ci_drawable" format="reference"/>
+        <attr name="ci_drawable_unselected" format="reference"/>
+    </declare-styleable>
+    <!-- XML attributes used by default_toppackage.xml -->
+    <declare-styleable name="TopPackage">
+        <attr name="topPackageName" format="string" />
+        <attr name="topClassName" format="string" />
+        <attr name="topOrder" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="MovingDotView">
+        <!--小点的总数-->
+        <attr name="md_dot_count" format="integer"/>
+        <!--中心大点的半径-->
+        <attr name="md_center_dot_radius" format="dimension"/>
+        <!--中心大点的资源文件-->
+        <attr name="md_center_dot_back" format="reference"/>
+        <!--小点的颜色-->
+        <attr name="md_dot_color" format="color"/>
+        <!--最大小点半径-->
+        <attr name="md_dot_max_radius" format="dimension"/>
+        <!--最小小点半径-->
+        <attr name="md_dot_min_radius" format="dimension"/>
+        <!--小圆点的最大速度(1~10)-->
+        <attr name="md_dot_max_speed" format="integer"/>
+        <!--小圆点的最小速度(1~10)-->
+        <attr name="md_dot_min_speed" format="integer"/>
+        <!--进度显示文字大小-->
+        <attr name="md_text_size" format="dimension"/>
+        <!--进度显示文字颜色-->
+        <attr name="md_text_color" format="color"/>
+        <!--加速按钮的文字颜色-->
+        <attr name="md_btn_text_color" format="color"/>
+        <!--动画持续的时间-->
+        <attr name="md_animator_duration" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="SpringRecyclerView">
+        <attr name="srv_enableSpringEffectWhenDrag" format="boolean"/>
+        <attr name="srv_enableSpringEffectWhenFling" format="boolean"/>
+        <attr name="srv_releaseBackAnimDuration" format="integer"/>
+        <attr name="srv_flingBackAnimDuration" format="integer"/>
+    </declare-styleable>
+
+    <!-- 图片裁剪 -->
+    <declare-styleable name="CropImageView">
+        <attr name="cropGuidelines">
+            <enum name="off" value="0"/>
+            <enum name="onTouch" value="1"/>
+            <enum name="on" value="2"/>
+        </attr>
+        <attr name="cropScaleType">
+            <enum name="fitCenter" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="centerCrop" value="2"/>
+            <enum name="centerInside" value="3"/>
+        </attr>
+        <attr name="cropShape">
+            <enum name="rectangle" value="0"/>
+            <enum name="oval" value="1"/>
+        </attr>
+        <attr name="cropAutoZoomEnabled" format="boolean"/>
+        <attr name="cropMaxZoom" format="integer"/>
+        <attr name="cropMultiTouchEnabled" format="boolean"/>
+        <attr name="cropFixAspectRatio" format="boolean"/>
+        <attr name="cropAspectRatioX" format="integer"/>
+        <attr name="cropAspectRatioY" format="integer"/>
+        <attr name="cropInitialCropWindowPaddingRatio" format="float"/>
+        <attr name="cropBorderLineThickness" format="dimension"/>
+        <attr name="cropBorderLineColor" format="color"/>
+        <attr name="cropBorderCornerThickness" format="dimension"/>
+        <attr name="cropBorderCornerOffset" format="dimension"/>
+        <attr name="cropBorderCornerLength" format="dimension"/>
+        <attr name="cropBorderCornerColor" format="color"/>
+        <attr name="cropGuidelinesThickness" format="dimension"/>
+        <attr name="cropGuidelinesColor" format="color"/>
+        <attr name="cropBackgroundColor" format="color"/>
+        <attr name="cropSnapRadius" format="dimension"/>
+        <attr name="cropTouchRadius" format="dimension"/>
+        <attr name="cropShowCropOverlay" format="boolean"/>
+        <attr name="cropShowProgressBar" format="boolean"/>
+        <attr name="cropMinCropWindowWidth" format="dimension"/>
+        <attr name="cropMinCropWindowHeight" format="dimension"/>
+        <attr name="cropMinCropResultWidthPX" format="float"/>
+        <attr name="cropMinCropResultHeightPX" format="float"/>
+        <attr name="cropMaxCropResultWidthPX" format="float"/>
+        <attr name="cropMaxCropResultHeightPX" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <!-- {@deprecated Use civ_circlebackground_color instead.} -->
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="switch_icon_size">100dp</dimen>
+    <dimen name="roundlist_app_icon_size">98dp</dimen>
+    <dimen name="roundlist_app_center_size">210dp</dimen>
+</resources>

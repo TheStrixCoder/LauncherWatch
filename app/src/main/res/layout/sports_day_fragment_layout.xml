@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@drawable/sports_day_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textSize="28sp" android:textColor="#ffffffff" android:id="@+id/tv_averg_step" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="230px" android:layout_marginTop="26px" android:text="@string/steps_string"/>
+    <com.bid.launcherwatch.MiniColumnChart android:id="@+id/stepDayview" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_alignParentTop="true" android:layout_alignParentStart="true"/>
+    <RelativeLayout android:id="@+id/stepDayDetailview" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:background="@android:color/black" android:layout_width="300dp" android:layout_height="205dp" android:layout_marginTop="72dp" android:layout_centerHorizontal="true">
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="26dp">
+                <TextView android:textSize="22sp" android:textColor="@android:color/white" android:gravity="left|center_vertical|center_horizontal|center" android:layout_width="0dp" android:layout_height="match_parent" android:text="@string/sport_detail_date" android:layout_weight="1"/>
+                <TextView android:textSize="22sp" android:textColor="@android:color/white" android:gravity="center" android:layout_width="0dp" android:layout_height="match_parent" android:text="@string/sport_detail_step" android:layout_weight="1"/>
+                <TextView android:textSize="22sp" android:textColor="@android:color/white" android:gravity="right|center_vertical|center_horizontal|center" android:layout_width="0dp" android:layout_height="match_parent" android:text="@string/sport_detail_distance" android:layout_weight="1"/>
+            </LinearLayout>
+            <com.bid.launcherwatch.view.CustListView android:id="@+id/Detail_listview" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:divider="@null"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView android:textSize="28sp" android:textColor="#ffffffff" android:id="@+id/tv_totall_step" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="115px" android:layout_marginTop="335px" android:text="@string/step_default" android:maxLines="1"/>
+    <TextView android:textSize="28sp" android:textColor="#ffffffff" android:id="@+id/tv_totall_distance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="310px" android:layout_marginTop="335px" android:text="@string/distance_default" android:maxLines="1"/>
+    <ImageButton android:id="@+id/sport_target_settings" android:layout_width="60px" android:layout_height="60px" android:layout_marginBottom="15px" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" style="@style/quicksettings_button_style"/>
+</RelativeLayout>

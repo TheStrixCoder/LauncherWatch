@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bid.launcherwatch.AppListItemLayout xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="80dp">
+    <ImageView android:id="@+id/app_icon" android:layout_width="60dp" android:layout_height="60dp" android:layout_marginLeft="100dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp" android:layout_marginBottom="20dp" app:srcCompat="@drawable/wl_circle"/>
+    <TextView android:textSize="28sp" android:textColor="#ffffffff" android:gravity="left|center_vertical|center_horizontal|center" android:id="@+id/app_name" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="6dp" android:layout_marginRight="6dp" android:lineSpacingExtra="-4sp" android:fontFamily="sans-serif-condensed-light"/>
+</com.bid.launcherwatch.AppListItemLayout>
