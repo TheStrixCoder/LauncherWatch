@@ -10,38 +10,32 @@ import android.provider.Settings.System;
 import android.text.format.Time;
 import android.util.AttributeSet;
 import android.widget.TextView;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateTimeView extends android.support.v7.widget.AppCompatTextView {
     private boolean mAttachedToWindow;
-    private BroadcastReceiver mBroadcastReceiver = new C01091();
-    private ContentObserver mContentObserver = new ContentObserver(new Handler()) {
-        public void onChange(boolean selfChange) {
-            DateTimeView.this.mLastFormat = null;
-            DateTimeView.this.update();
-        }
-    };
-    int mLastDisplay = -1;
-    DateFormat mLastFormat;
-    Date mTime;
-    long mTimeMillis;
-    private long mUpdateTimeMillis;
-
-    /* renamed from: com.mediatek.watchapp.DateTimeView$1 */
-    class C01091 extends BroadcastReceiver {
-        C01091() {
-        }
-
+    private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             if (!"android.intent.action.TIME_TICK".equals(intent.getAction()) || java.lang.System.currentTimeMillis() >= DateTimeView.this.mUpdateTimeMillis) {
                 DateTimeView.this.mLastFormat = null;
                 DateTimeView.this.update();
             }
         }
-    }
+    };
+    private ContentObserver mContentObserver = new ContentObserver(new Handler()) {
+        public void onChange(boolean selfChange) {
+            DateTimeView.this.mLastFormat = null;
+            //DateTimeView.this.update();
+        }
+    };
+    int mLastDisplay = -1;
+    DateFormat mLastFormat;
+    Date mTime;
+    long mTimeMillis;
+    /* access modifiers changed from: private */
+    public long mUpdateTimeMillis;
 
     public DateTimeView(Context context) {
         super(context);
@@ -51,13 +45,15 @@ public class DateTimeView extends android.support.v7.widget.AppCompatTextView {
         super(context, attrs);
     }
 
-    protected void onAttachedToWindow() {
+    /* access modifiers changed from: protected */
+    public void onAttachedToWindow() {
         super.onAttachedToWindow();
         registerReceivers();
         this.mAttachedToWindow = true;
     }
 
-    protected void onDetachedFromWindow() {
+    /* access modifiers changed from: protected */
+    public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         unregisterReceivers();
         this.mAttachedToWindow = false;
@@ -72,12 +68,13 @@ public class DateTimeView extends android.support.v7.widget.AppCompatTextView {
         update();
     }
 
-    void update() {
+    /* access modifiers changed from: 0000 */
+    public void update() {
+        int display;
+        DateFormat format;
         if (this.mTime != null) {
-            int display;
-            DateFormat format;
-            long start = java.lang.System.nanoTime();
-            Date time = this.mTime;
+            long nanoTime = java.lang.System.nanoTime();
+            Date date = this.mTime;
             Time t = new Time();
             t.set(this.mTimeMillis);
             t.second = 0;
@@ -107,7 +104,8 @@ public class DateTimeView extends android.support.v7.widget.AppCompatTextView {
                         format = getDateFormat();
                         break;
                     default:
-                        throw new RuntimeException("unknown display value: " + display);
+                        RuntimeException runtimeException = new RuntimeException("unknown display value: " + display);
+                        throw runtimeException;
                 }
                 this.mLastFormat = format;
             } else {
@@ -127,7 +125,7 @@ public class DateTimeView extends android.support.v7.widget.AppCompatTextView {
                 }
                 this.mUpdateTimeMillis = twelveHoursBefore;
             }
-            long finish = java.lang.System.nanoTime();
+            long nanoTime2 = java.lang.System.nanoTime();
         }
     }
 
