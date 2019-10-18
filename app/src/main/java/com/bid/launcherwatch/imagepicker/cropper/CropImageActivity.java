@@ -29,7 +29,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-import com.linchaolong.android.imagepicker.R;
+import com.bid.launcherwatch.R;
 import java.io.File;
 import java.io.IOException;
 

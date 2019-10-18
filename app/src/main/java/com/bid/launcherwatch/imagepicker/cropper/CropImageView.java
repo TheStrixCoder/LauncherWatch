@@ -33,7 +33,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import com.linchaolong.android.imagepicker.R;
+import com.bid.launcherwatch.R;
 import java.lang.ref.WeakReference;
 import java.util.UUID;
 

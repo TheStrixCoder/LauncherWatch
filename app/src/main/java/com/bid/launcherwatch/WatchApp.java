@@ -1,6 +1,8 @@
 package com.bid.launcherwatch;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.Application;
@@ -30,6 +32,7 @@ import android.provider.Settings.System;
 import android.service.wallpaper.IWallpaperConnection.Stub;
 import android.service.wallpaper.IWallpaperEngine;
 import android.service.wallpaper.IWallpaperService;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -75,7 +78,8 @@ public class WatchApp extends Application {
     private static int mclockIndex = 0;
     public static ArrayList<installedClock> minstalledClocks = new ArrayList<>();
     private static WatchApp sWatchApp;
-
+    private static  int MY_PERMISSIONS_REQUEST_READ_CALL_LOG=1;
+    private static  int MY_PERMISSIONS_REQUEST_READ_SMS=1;
     static class WallpaperConnection extends Stub implements ServiceConnection {
         View mClockHost;
         boolean mConnected;
@@ -359,6 +363,7 @@ public class WatchApp extends Application {
             throw e;
         }
     }
+
     public static void getAndroidWearClock(Context mContext) {
         Resources resources = mContext.getResources();
         PackageManager mPackageManager = mContext.getPackageManager();
@@ -532,23 +537,46 @@ public class WatchApp extends Application {
     }
 
     public static int getPhoneCounts(Context context) {
-        Cursor cursor = context.getContentResolver().query(Calls.CONTENT_URI, new String[]{"type"}, " type=? and new=?", new String[]{"3", "1"}, "date desc");
-        if (cursor == null) {
-            return 0;
+
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) context,
+                    new String[]{Manifest.permission.READ_CALL_LOG},
+                    MY_PERMISSIONS_REQUEST_READ_CALL_LOG);
+
         }
-        int result = cursor.getCount();
-        cursor.close();
-        return result;
+        else
+        {
+            Cursor cursor = context.getContentResolver().query(Calls.CONTENT_URI, new String[]{"type"}, " type=? and new=?", new String[]{"3", "1"}, "date desc");
+            if (cursor == null) {
+                return 0;
+            }
+            int result = cursor.getCount();
+            cursor.close();
+            return result;
+        }
+        return 0;
+
     }
 
     public static int getSmsCounts(Context context) {
-        Cursor csr = context.getContentResolver().query(Uri.parse("content://sms"), null, "type = 1 and read = 0", null, null);
-        if (csr == null) {
-            return 0;
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) context,
+                    new String[]{Manifest.permission.READ_SMS},
+                    MY_PERMISSIONS_REQUEST_READ_SMS);
+
         }
-        int result = csr.getCount();
-        csr.close();
-        return result;
+        else
+        {
+            Cursor csr = context.getContentResolver().query(Uri.parse("content://sms"), null, "type = 1 and read = 0", null, null);
+            if (csr == null) {
+                return 0;
+            }
+            int result = csr.getCount();
+            csr.close();
+            return result;
+        }
+        return 0;
+
     }
 
     public static int clearAppCache(Context context) {

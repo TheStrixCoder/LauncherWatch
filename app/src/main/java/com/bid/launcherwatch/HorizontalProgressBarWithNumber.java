@@ -61,17 +61,17 @@ public class HorizontalProgressBarWithNumber extends ProgressBar {
         return result;
     }
 
-    @SuppressLint("ResourceType")
+
     private void obtainStyledAttributes(AttributeSet attrs) {
         TypedArray attributes = getContext().obtainStyledAttributes(attrs, R.styleable.HorizontalProgressBarWithNumber);
-        this.mTextColor = attributes.getColor(5, -261935);
-        this.mTextSize = (int) attributes.getDimension(4, (float) this.mTextSize);
-        this.mReachedBarColor = attributes.getColor(1, this.mTextColor);
-        this.mUnReachedBarColor = attributes.getColor(0, -2894118);
-        this.mReachedProgressBarHeight = (int) attributes.getDimension(2, (float) this.mReachedProgressBarHeight);
-        this.mUnReachedProgressBarHeight = (int) attributes.getDimension(3, (float) this.mUnReachedProgressBarHeight);
-        this.mTextOffset = (int) attributes.getDimension(6, (float) this.mTextOffset);
-        if (attributes.getInt(7, 0) != 0) {
+        this.mTextColor = attributes.getColor(R.styleable.HorizontalProgressBarWithNumber_progress_text_color, -261935);
+        this.mTextSize = (int) attributes.getDimension(R.styleable.HorizontalProgressBarWithNumber_progress_text_size, (float) this.mTextSize);
+        this.mReachedBarColor = attributes.getColor(R.styleable.HorizontalProgressBarWithNumber_progress_reached_color, this.mTextColor);
+        this.mUnReachedBarColor = attributes.getColor(R.styleable.HorizontalProgressBarWithNumber_progress_unreached_color, -2894118);
+        this.mReachedProgressBarHeight = (int) attributes.getDimension(R.styleable.HorizontalProgressBarWithNumber_progress_reached_bar_height, (float) this.mReachedProgressBarHeight);
+        this.mUnReachedProgressBarHeight = (int) attributes.getDimension(R.styleable.HorizontalProgressBarWithNumber_progress_unreached_bar_height, (float) this.mUnReachedProgressBarHeight);
+        this.mTextOffset = (int) attributes.getDimension(R.styleable.HorizontalProgressBarWithNumber_progress_text_offset, (float) this.mTextOffset);
+        if (attributes.getInt(R.styleable.HorizontalProgressBarWithNumber_progress_text_visibility, 0) != 0) {
             this.mIfDrawText = false;
         }
         attributes.recycle();

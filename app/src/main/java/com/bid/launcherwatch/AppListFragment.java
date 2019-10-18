@@ -32,7 +32,7 @@ public class AppListFragment extends Fragment {
         this.mApplistUtil = new AppListUtil(rootView.getContext());
         this.mAppListView = (WearableListView) rootView.findViewById(R.id.app_list_view);
         this.mAppListView.setAdapter(this.mApplistUtil.getAdapter());
-        this.mAppListView.setOnClickListener(this.mApplistUtil);
+        this.mAppListView.setOnClickListener((View.OnClickListener) this.mApplistUtil);
         return rootView;
     }
 

@@ -25,7 +25,7 @@ public class AppListUtil implements OnItemClickListener {
     public ArrayList<AppInfo> mApps;
     private AppArcListViewAdapter mArcAdaper;
     private Context mContext;
-    private PackageManager mPackageManager = this.mContext.getPackageManager();
+    //private PackageManager mPackageManager = this.mContext.getPackageManager();
 
 
 

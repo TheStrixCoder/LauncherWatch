@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_container" android:background="@drawable/quicksetting_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:zhy="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
+    android:background="@drawable/quicksetting_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/status_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:layout_marginRight="40dp" android:layout_centerInParent="true">
         <ImageView android:id="@+id/phone_connect" android:layout_width="@dimen/switch_icon_size" android:layout_height="@dimen/switch_icon_size" style="@style/quicksettings_button_style"/>
         <Space android:layout_width="15dp" android:layout_height="match_parent"/>
@@ -18,5 +24,5 @@
     <com.bid.launcherwatch.DateView android:textSize="38sp" android:textStyle="bold" android:textColor="#d1d0d0" android:gravity="center" android:id="@+id/date" android:tag="yyyy-MM-dd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:layout_below="@+id/status_view" android:layout_centerHorizontal="true" android:textAllCaps="true"/>
     <com.bid.launcherwatch.BatteryPercentageView android:textSize="30sp" android:textStyle="bold" android:textColor="#3fa9f5" android:gravity="center" android:id="@+id/percentage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/date" android:layout_centerHorizontal="true"/>
     <ImageView android:layout_gravity="center" android:id="@+id/BatteryDrawable" android:layout_width="@dimen/battery_view_size" android:layout_height="@dimen/battery_view_size" app:srcCompat="@drawable/battery_02" android:layout_toRightOf="@+id/percentage" android:layout_alignBottom="@+id/percentage"/>
-    <com.bid.launcherwatch.BatteryMeterView android:id="@+id/pb" android:padding="23px" android:layout_width="match_parent" android:layout_height="match_parent" android:max="100" android:indeterminate="false" app:progress_unreached_color="#242424" app:progress_reached_color="#073b75" app:progress_reached_bar_height="20px" app:progress_unreached_bar_height="20px"/>
+    <com.bid.launcherwatch.BatteryMeterView android:id="@+id/pb" android:padding="23px" android:layout_width="match_parent" android:layout_height="match_parent" android:max="100" android:indeterminate="false" zhy:progress_unreached_color="#242424" zhy:progress_reached_color="#073b75" zhy:progress_reached_bar_height="20dp" zhy:progress_unreached_bar_height="20dp"/>
 </RelativeLayout>

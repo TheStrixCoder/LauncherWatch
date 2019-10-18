@@ -2458,7 +2458,7 @@ public class MyAnalogClock3 extends WiiteWatchFace {
         Calendar when = Calendar.getInstance(Locale.getDefault());
         when.setTimeInMillis(System.currentTimeMillis());
         when.setTimeZone(TimeZone.getDefault());
-        if (!(when.get(2) == this.moonPhaseCalendar.get(2) && when.get(5) == this.moonPhaseCalendar.get(5))) {
+        if (!(when.get(Calendar.MONTH) == this.moonPhaseCalendar.get(Calendar.MONTH) && when.get(Calendar.DATE) == this.moonPhaseCalendar.get(Calendar.DATE))) {
             isDayChange = true;
             this.moonPhaseCalendar = when;
         }

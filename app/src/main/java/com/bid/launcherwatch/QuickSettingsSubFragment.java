@@ -1,16 +1,20 @@
 package com.bid.launcherwatch;
 
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings.Global;
 import android.provider.Settings.System;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.wearable.R.styleable;
 import android.telephony.PhoneStateListener;
@@ -59,6 +63,7 @@ public class QuickSettingsSubFragment extends Fragment implements OnClickListene
     /* access modifiers changed from: private */
     public int mServiceState = 1;
     private TelephonyManager mTelephonyManager;
+    private final int MY_PERMISSIONS_REQUEST_READ_CALL_LOG=1;
     private Myreciever myreciever = new Myreciever();
     /* access modifiers changed from: private */
     public int status;
@@ -159,14 +164,14 @@ public class QuickSettingsSubFragment extends Fragment implements OnClickListene
                 try {
                     Intent intent = new Intent();
                     intent.setComponent(new ComponentName("com.wiitetech.WiiWatchPro", "com.wiitetech.WiiWatchPro.ui.ServerActivity"));
-                    intent.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED|Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Intent.FLAG_ACTIVITY_NEW_TASK);
                     QuickSettingsSubFragment.this.startActivity(intent);
                 } catch (ActivityNotFoundException e) {
                 }
                 try {
                     Intent intent2 = new Intent();
                     intent2.setComponent(new ComponentName("com.wiitetech.WiiWatchProUart", "com.wiitetech.WiiWatchProUart.ui.ServerActivity"));
-                    intent2.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED|Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent2.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Intent.FLAG_ACTIVITY_NEW_TASK);
                     QuickSettingsSubFragment.this.startActivity(intent2);
                 } catch (ActivityNotFoundException e2) {
                 }
@@ -300,16 +305,26 @@ public class QuickSettingsSubFragment extends Fragment implements OnClickListene
     }
 
     private int getNetWorkType() {
-        int subId = SubscriptionManager.getDefaultSubscriptionId();
-        int actualDataNetworkType = this.mTelephonyManager.getDataNetworkType();
-        int actualVoiceNetworkType = this.mTelephonyManager.getVoiceNetworkType();
-        if (actualDataNetworkType != 0) {
-            return actualDataNetworkType;
+        //int subId = SubscriptionManager.getDefaultSubscriptionId();
+        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) mContext,new String[]{Manifest.permission.READ_PHONE_STATE},
+                    MY_PERMISSIONS_REQUEST_READ_CALL_LOG);
+
         }
-        if (actualVoiceNetworkType != 0) {
-            return actualVoiceNetworkType;
+        else
+        {
+            int actualDataNetworkType = this.mTelephonyManager.getDataNetworkType();
+            int actualVoiceNetworkType = this.mTelephonyManager.getVoiceNetworkType();
+            if (actualDataNetworkType != 0) {
+                return actualDataNetworkType;
+            }
+            if (actualVoiceNetworkType != 0) {
+                return actualVoiceNetworkType;
+            }
+            return 0;
         }
         return 0;
+
     }
 
     /* access modifiers changed from: private */

@@ -153,7 +153,7 @@ public class AppListCustomUtil {
         return icon;
     }
 
-    @SuppressLint("ResourceType")
+
     static boolean loadTopPackage(Context context) {
         Log.i("AppListCustomUtil", "loadTopPackage");
         if (sTopPackages != null) {
@@ -171,8 +171,8 @@ public class AppListCustomUtil {
                     break;
                 } else if (type == 2) {
                     TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TopPackage);
-                    sTopPackages.add(new TopPackage(a.getString(0), a.getString(1), a.getInt(2, 0)));
-                    Log.d("AppListCustomUtil", "loadTopPackage: packageName = " + a.getString(0) + ", className = " + a.getString(1));
+                    sTopPackages.add(new TopPackage(a.getString(R.styleable.TopPackage_topPackageName), a.getString(R.styleable.TopPackage_topClassName), a.getInt(R.styleable.TopPackage_topOrder, 0)));
+                    Log.d("AppListCustomUtil", "loadTopPackage: packageName = " + a.getString(R.styleable.TopPackage_topPackageName) + ", className = " + a.getString(R.styleable.TopPackage_topClassName));
                     a.recycle();
                 }
             }
