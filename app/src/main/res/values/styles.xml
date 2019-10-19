@@ -30,6 +30,8 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="windowNoTitle">true</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
     <style name="NotificationButtonWithOutBG">
         <item name="android:textSize">28dp</item>
@@ -53,6 +55,8 @@
     </style>
     <style name="chooseClockview">
         <item name="android:windowSwipeToDismiss">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
     <style name="OnlineFontPreview">
         <item name="android:windowBackground">@drawable/alert_dialog_bg4</item>

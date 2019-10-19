@@ -33,6 +33,7 @@ import android.service.wallpaper.IWallpaperConnection.Stub;
 import android.service.wallpaper.IWallpaperEngine;
 import android.service.wallpaper.IWallpaperService;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -226,7 +227,7 @@ public class WatchApp extends Application {
         }
         minstalledClocks.clear();
         mClocksSkinPath.clear();
-        File f = new File((File.separator + "system" + File.separator + "media") + File.separator + "InsideClockSkin" + File.separator);
+        File f = new File((File.separator + "sdcard" + File.separator + "media") + File.separator + "InsideClockSkin" + File.separator);
         if (f.exists()) {
             search(f);
         }
@@ -626,11 +627,11 @@ public class WatchApp extends Application {
             }
         }
         if (ev.getAction() == 0) {
-            ((AppCompatActivity) context).onUserInteraction();
+            ((FragmentActivity) context).onUserInteraction();
         }
-        boolean handled = ((AppCompatActivity) context).getWindow().superDispatchTouchEvent(ev);
+        boolean handled = ((FragmentActivity) context).getWindow().superDispatchTouchEvent(ev);
         if (!handled) {
-            handled = ((AppCompatActivity) context).onTouchEvent(ev);
+            handled = ((FragmentActivity) context).onTouchEvent(ev);
         }
         if (!(handled || mWallpaperConnection == null || mWallpaperConnection.mEngine == null)) {
             int action = ev.getActionMasked();

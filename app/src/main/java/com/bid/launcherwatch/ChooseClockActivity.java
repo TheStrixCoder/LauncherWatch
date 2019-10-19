@@ -38,6 +38,7 @@ import com.bid.launcherwatch.online.ClockSkinOnlineActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.DisplayImageOptions.Builder;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import java.io.File;
 import java.util.ArrayList;
@@ -218,12 +219,14 @@ public class ChooseClockActivity extends Activity {
             int thumbnailRes = ((installedClock) ChooseClockActivity.this.mAllClockSkins.get(position)).img_preview_id;
             if (thumbnailFilePath != null) {
                 String url = "file://" + thumbnailFilePath;
+                ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(mContext));
                 ImageLoader.getInstance().displayImage(url, holder.mImage, this.options);
             } else if (thumbnailRes != 0) {
                 holder.mImage.setImageResource(((installedClock) ChooseClockActivity.this.mAllClockSkins.get(position)).img_preview_id);
             }
             if (((installedClock) ChooseClockActivity.this.mAllClockSkins.get(position)).type.equals("bgsettingclock") && ChooseClockActivity.this.mCustomDialWatchfacePath != null) {
                 String url2 = "file://" + ChooseClockActivity.this.mCustomDialWatchfacePath;
+                ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(mContext));
                 ImageLoader.getInstance().displayImage(url2, holder.mImage, ChooseClockActivity.this.mImageOptions);
             }
             ResolveInfo resolveInfo = ((installedClock) ChooseClockActivity.this.mAllClockSkins.get(position)).resolveInfo;
