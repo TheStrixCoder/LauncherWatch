@@ -238,7 +238,7 @@ public class MyAnalogClock3 extends WiiteWatchFace {
      */
     private void parseXML(Resources r2, String pkg2, String xml, ClockInfo clock) {
         XmlPullParser parser;
-        Num clocknum;
+        Num clocknum=new Num();
         List<Num> nums = new ArrayList<>();
         try {
             if (this.mClockskinPath == null) {
@@ -257,23 +257,14 @@ public class MyAnalogClock3 extends WiiteWatchFace {
                     case 0:
                         try {
                             Log.d("qs_parseXML", "eventType-0");
-                            clocknum = clocknum2;
+                            //clocknum = clocknum2;
                             eventType=parser.next();
                             break;
                         } catch (Exception e) {
                             Num num = clocknum2;
                             Log.w("MyAnalogClock3", "Got XmlPullParserException while parsing toppackage.", e);
                         }
-//                        catch (IOException e) {
-//                            //e = e2;
-//                            Num num2 = clocknum2;
-//                            Log.w("MyAnalogClock3", "Got IOException while parsing toppackage.", e);
-//                        }
-                    case 1:
-                        eventType=parser.next();
-                        Log.d("qs_parseXML", "eventType-1");
-                        clocknum = clocknum2;
-                        break;
+
                     case 2:
 
                         ClockInfo clockInfo = new ClockInfo();
@@ -284,7 +275,7 @@ public class MyAnalogClock3 extends WiiteWatchFace {
                             eventType=parser.next();
                             break;
                         } else {
-                            int eventType2 = parser.next();
+                            //int eventType2 = parser.next();
                             clocknum.setNumDrawable(getDrawableRes(r2, pkg2, parser.getText()));
                             Log.d("qs_parseXML", "NumDrawable-" + parser.getText());
                             eventType=parser.next();
@@ -294,7 +285,7 @@ public class MyAnalogClock3 extends WiiteWatchFace {
 
                         Log.d("qs_parseXML", "eventType-3");
                         if (parser.getName().equals("image")) {
-                            nums.add(clocknum2);
+                            nums.add(clocknum);
                             clock.setNums(nums);
                         }
                         clocknum = clocknum2;
@@ -374,129 +365,147 @@ public class MyAnalogClock3 extends WiiteWatchFace {
                                                                                                     if (!parser.getName().equals("cls")) {
                                                                                                         if (!parser.getName().equals("pkg")) {
                                                                                                             if (parser.getName().equals("range")) {
-                                                                                                                eventType = parser.next();
+
                                                                                                                 clock.setRange(parser.getText());
                                                                                                                 Log.d("qs_parseClockSinXML", "range-" + parser.getText());
                                                                                                                 clockInfo = clock;
+                                                                                                                eventType = parser.next();
                                                                                                                 break;
                                                                                                             }
                                                                                                         } else {
-                                                                                                            eventType = parser.next();
+
                                                                                                             clock.setPkg(parser.getText());
                                                                                                             Log.d("qs_parseClockSinXML", "pkg-" + parser.getText());
                                                                                                             clockInfo = clock;
+                                                                                                            eventType = parser.next();
                                                                                                             break;
                                                                                                         }
                                                                                                     } else {
-                                                                                                        eventType = parser.next();
+
                                                                                                         clock.setCls(parser.getText());
                                                                                                         Log.d("qs_parseClockSinXML", "cls-" + parser.getText());
                                                                                                         clockInfo = clock;
+                                                                                                        eventType = parser.next();
                                                                                                         break;
                                                                                                     }
                                                                                                 } else {
-                                                                                                    eventType = parser.next();
+
                                                                                                     clock.setRotatemode(parser.getText());
                                                                                                     Log.d("qs_parseClockSinXML", "radius-" + parser.getText());
                                                                                                     clockInfo = clock;
+                                                                                                    eventType = parser.next();
                                                                                                     break;
                                                                                                 }
                                                                                             } else {
-                                                                                                eventType = parser.next();
+
                                                                                                 clock.setRadius(parser.getText());
                                                                                                 Log.d("qs_parseClockSinXML", "radius-" + parser.getText());
                                                                                                 clockInfo = clock;
+                                                                                                eventType = parser.next();
                                                                                                 break;
                                                                                             }
                                                                                         } else {
-                                                                                            eventType = parser.next();
+
                                                                                             clock.setWidth(parser.getText());
                                                                                             Log.d("qs_parseClockSinXML", "width-" + parser.getText());
                                                                                             clockInfo = clock;
+                                                                                            eventType = parser.next();
                                                                                             break;
                                                                                         }
                                                                                     } else {
-                                                                                        eventType = parser.next();
+
                                                                                         clock.setColor(parser.getText());
                                                                                         Log.d("qs_parseClockSinXML", "color-" + parser.getText());
                                                                                         clockInfo = clock;
+                                                                                        eventType = parser.next();
                                                                                         break;
                                                                                     }
                                                                                 } else {
-                                                                                    eventType = parser.next();
+
                                                                                     clock.setColorArray(parser.getText());
                                                                                     Log.d("qs_parseClockSinXML", "colorarray-" + parser.getText());
                                                                                     clockInfo = clock;
+                                                                                    eventType = parser.next();
                                                                                     break;
                                                                                 }
                                                                             } else {
-                                                                                eventType = parser.next();
+
                                                                                 clock.setTextcolor(parser.getText());
                                                                                 Log.d("qs_parseClockSinXML", "textcolor-" + parser.getText());
                                                                                 clockInfo = clock;
+                                                                                eventType = parser.next();
                                                                                 break;
                                                                             }
                                                                         } else {
-                                                                            eventType = parser.next();
+
                                                                             clock.setTextsize(parser.getText());
                                                                             Log.d("qs_parseClockSinXML", "textsize-" + parser.getText());
                                                                             clockInfo = clock;
+                                                                            eventType = parser.next();
                                                                             break;
                                                                         }
                                                                     } else {
-                                                                        eventType = parser.next();
+
                                                                         clock.setDirection(parser.getText());
                                                                         Log.d("qs_parseClockSinXML", "direction-" + parser.getText());
                                                                         clockInfo = clock;
+                                                                        eventType = parser.next();
                                                                         break;
                                                                     }
                                                                 } else {
-                                                                    eventType = parser.next();
+
                                                                     clock.setStartAngle(parser.getText());
                                                                     Log.d("qs_parseClockSinXML", "startAngle-" + parser.getText());
                                                                     clockInfo = clock;
+                                                                    eventType = parser.next();
                                                                     break;
                                                                 }
                                                             } else {
-                                                                eventType = parser.next();
+
                                                                 clock.setMulrotate(parser.getText());
                                                                 Log.d("qs_parseClockSinXML", "mulrotate-" + parser.getText());
                                                                 clockInfo = clock;
+                                                                eventType = parser.next();
                                                                 break;
                                                             }
                                                         } else {
-                                                            eventType = parser.next();
+
                                                             clock.setArraytype(parser.getText());
                                                             Log.d("qs_parseClockSinXML", "Arraytype-" + parser.getText());
                                                             clockInfo = clock;
+                                                            eventType = parser.next();
                                                             break;
                                                         }
                                                     } else {
-                                                        eventType = parser.next();
+
                                                         clock.setAngle(parser.getText());
                                                         Log.d("qs_parseClockSinXML", "angle-" + parser.getText());
                                                         clockInfo = clock;
+                                                        eventType = parser.next();
                                                         break;
                                                     }
                                                 } else {
-                                                    eventType = parser.next();
+
                                                     clock.setRotate(parser.getText());
                                                     Log.d("qs_parseClockSinXML", "rotate-" + parser.getText());
                                                     clockInfo = clock;
+                                                    eventType = parser.next();
                                                     break;
                                                 }
                                             } else {
-                                                eventType = parser.next();
+
                                                 clock.setCenterY(parser.getText());
                                                 Log.d("qs_parseClockSinXML", "CenterY-" + parser.getText());
                                                 clockInfo = clock;
+                                                eventType = parser.next();
                                                 break;
                                             }
                                         } else {
-                                            eventType = parser.next();
+
                                             clock.setCenterX(parser.getText());
                                             Log.d("qs_parseClockSinXML", "CenterX-" + parser.getText());
                                             clockInfo = clock;
+                                            eventType = parser.next();
                                             break;
                                         }
                                     } else {
@@ -508,28 +517,33 @@ public class MyAnalogClock3 extends WiiteWatchFace {
                                         if (!name.endsWith(".xml")) {
                                             clock.setNamepng(getDrawableRes(r2, pkg2, name));
                                             clockInfo = clock;
+                                            //eventType = parser.next();
                                             break;
                                         } else {
                                             String namexml = name.split("\\.")[0];
                                             Log.d("qs_parseClockSinXML", "namexml-" + namexml);
                                             parseXML(r2, pkg2, namexml, clock);
                                             clockInfo = clock;
+
                                             break;
                                         }
+
                                     }
                                 } else {
-                                    eventType = parser.next();
+
                                     boolean smoothRun = !parser.getText().equals("false");
                                     this.mClockSkinConfigure.setSmoothRun(smoothRun);
                                     this.mSecondHandDuring = smoothRun ? this.mSecondHandDuring : 1000;
                                     Log.d("qs_parseClockSinXML", "smooth-" + parser.getText());
                                     clockInfo = clock;
+                                    eventType = parser.next();
                                     break;
                                 }
                             }
                         } else {
                             eventType=parser.next();
                             clockInfo = new ClockInfo();
+                            clock=new ClockInfo();
                             break;
                         }
                     case XmlPullParser.END_TAG:
