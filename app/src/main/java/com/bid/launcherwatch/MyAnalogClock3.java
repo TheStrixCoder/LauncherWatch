@@ -270,15 +270,19 @@ public class MyAnalogClock3 extends WiiteWatchFace {
                         ClockInfo clockInfo = new ClockInfo();
                         clockInfo.getClass();
                         clocknum = new Num();
-                        Log.d("qs_parseXML", "eventType-2");
+                        Log.d("qs_parseXML", "eventType-2 "+parser.getName()+" "+parser.getText());
                         if (!parser.getName().equals("image")) {
                             eventType=parser.next();
                             break;
                         } else {
                             //int eventType2 = parser.next();
-                            clocknum.setNumDrawable(getDrawableRes(r2, pkg2, parser.getText()));
-                            Log.d("qs_parseXML", "NumDrawable-" + parser.getText());
-                            eventType=parser.next();
+                            if(parser.next() == XmlPullParser.TEXT)
+                            {
+                                clocknum.setNumDrawable(getDrawableRes(r2, pkg2, parser.getText()));
+                                Log.d("qs_parseXML", "NumDrawable-" + parser.getText());
+                                //nums.add(clocknum);
+                                eventType=parser.next();
+                            }
                             break;
                         }
                     case 3:
@@ -365,176 +369,255 @@ public class MyAnalogClock3 extends WiiteWatchFace {
                                                                                                     if (!parser.getName().equals("cls")) {
                                                                                                         if (!parser.getName().equals("pkg")) {
                                                                                                             if (parser.getName().equals("range")) {
+                                                                                                                if(parser.next() == XmlPullParser.TEXT)
+                                                                                                                {
+                                                                                                                    clock.setRange(parser.getText());
+                                                                                                                    Log.d("qs_parseClockSinXML", "range-" + parser.getText());
+                                                                                                                    clockInfo = clock;
 
-                                                                                                                clock.setRange(parser.getText());
-                                                                                                                Log.d("qs_parseClockSinXML", "range-" + parser.getText());
-                                                                                                                clockInfo = clock;
+                                                                                                                }
                                                                                                                 eventType = parser.next();
                                                                                                                 break;
                                                                                                             }
                                                                                                         } else {
+                                                                                                            if(parser.next() == XmlPullParser.TEXT)
+                                                                                                            {
+                                                                                                                clock.setPkg(parser.getText());
+                                                                                                                Log.d("qs_parseClockSinXML", "pkg-" + parser.getText());
+                                                                                                            }
 
-                                                                                                            clock.setPkg(parser.getText());
-                                                                                                            Log.d("qs_parseClockSinXML", "pkg-" + parser.getText());
+
                                                                                                             clockInfo = clock;
                                                                                                             eventType = parser.next();
                                                                                                             break;
                                                                                                         }
                                                                                                     } else {
 
-                                                                                                        clock.setCls(parser.getText());
-                                                                                                        Log.d("qs_parseClockSinXML", "cls-" + parser.getText());
+                                                                                                        if(parser.next() == XmlPullParser.TEXT)
+                                                                                                        {
+                                                                                                            clock.setCls(parser.getText());
+                                                                                                            Log.d("qs_parseClockSinXML", "cls-" + parser.getText());
+                                                                                                        }
+
                                                                                                         clockInfo = clock;
                                                                                                         eventType = parser.next();
                                                                                                         break;
                                                                                                     }
                                                                                                 } else {
 
-                                                                                                    clock.setRotatemode(parser.getText());
-                                                                                                    Log.d("qs_parseClockSinXML", "radius-" + parser.getText());
+                                                                                                    if(parser.next() == XmlPullParser.TEXT)
+                                                                                                    {
+                                                                                                        clock.setRotatemode(parser.getText());
+                                                                                                        Log.d("qs_parseClockSinXML", "radius-" + parser.getText());
+                                                                                                    }
                                                                                                     clockInfo = clock;
                                                                                                     eventType = parser.next();
                                                                                                     break;
                                                                                                 }
                                                                                             } else {
 
-                                                                                                clock.setRadius(parser.getText());
-                                                                                                Log.d("qs_parseClockSinXML", "radius-" + parser.getText());
+                                                                                                if(parser.next() == XmlPullParser.TEXT)
+                                                                                                {
+                                                                                                    clock.setRadius(parser.getText());
+                                                                                                    Log.d("qs_parseClockSinXML", "radius-" + parser.getText());
+                                                                                                }
+
                                                                                                 clockInfo = clock;
                                                                                                 eventType = parser.next();
                                                                                                 break;
                                                                                             }
                                                                                         } else {
 
-                                                                                            clock.setWidth(parser.getText());
-                                                                                            Log.d("qs_parseClockSinXML", "width-" + parser.getText());
+                                                                                            if(parser.next() == XmlPullParser.TEXT)
+                                                                                            {
+                                                                                                clock.setWidth(parser.getText());
+                                                                                                Log.d("qs_parseClockSinXML", "width-" + parser.getText());
+                                                                                            }
+
                                                                                             clockInfo = clock;
                                                                                             eventType = parser.next();
                                                                                             break;
                                                                                         }
                                                                                     } else {
 
-                                                                                        clock.setColor(parser.getText());
-                                                                                        Log.d("qs_parseClockSinXML", "color-" + parser.getText());
+                                                                                        if(parser.next() == XmlPullParser.TEXT)
+                                                                                        {
+                                                                                            clock.setColor(parser.getText());
+                                                                                            Log.d("qs_parseClockSinXML", "color-" + parser.getText());
+                                                                                        }
+
                                                                                         clockInfo = clock;
                                                                                         eventType = parser.next();
                                                                                         break;
                                                                                     }
                                                                                 } else {
 
-                                                                                    clock.setColorArray(parser.getText());
-                                                                                    Log.d("qs_parseClockSinXML", "colorarray-" + parser.getText());
+                                                                                    if(parser.next() == XmlPullParser.TEXT)
+                                                                                    {
+                                                                                        clock.setColorArray(parser.getText());
+                                                                                        Log.d("qs_parseClockSinXML", "colorarray-" + parser.getText());
+                                                                                    }
+
                                                                                     clockInfo = clock;
                                                                                     eventType = parser.next();
                                                                                     break;
                                                                                 }
                                                                             } else {
 
-                                                                                clock.setTextcolor(parser.getText());
-                                                                                Log.d("qs_parseClockSinXML", "textcolor-" + parser.getText());
+                                                                                if(parser.next() == XmlPullParser.TEXT)
+                                                                                {
+                                                                                    clock.setTextcolor(parser.getText());
+                                                                                    Log.d("qs_parseClockSinXML", "textcolor-" + parser.getText());
+                                                                                }
+
                                                                                 clockInfo = clock;
                                                                                 eventType = parser.next();
                                                                                 break;
                                                                             }
                                                                         } else {
 
-                                                                            clock.setTextsize(parser.getText());
-                                                                            Log.d("qs_parseClockSinXML", "textsize-" + parser.getText());
+                                                                            if(parser.next() == XmlPullParser.TEXT)
+                                                                            {
+                                                                                clock.setTextsize(parser.getText());
+                                                                                Log.d("qs_parseClockSinXML", "textsize-" + parser.getText());
+                                                                            }
+
                                                                             clockInfo = clock;
                                                                             eventType = parser.next();
                                                                             break;
                                                                         }
                                                                     } else {
 
-                                                                        clock.setDirection(parser.getText());
-                                                                        Log.d("qs_parseClockSinXML", "direction-" + parser.getText());
+                                                                        if(parser.next() == XmlPullParser.TEXT)
+                                                                        {
+                                                                            clock.setDirection(parser.getText());
+                                                                            Log.d("qs_parseClockSinXML", "direction-" + parser.getText());
+                                                                        }
+
                                                                         clockInfo = clock;
                                                                         eventType = parser.next();
                                                                         break;
                                                                     }
                                                                 } else {
 
-                                                                    clock.setStartAngle(parser.getText());
-                                                                    Log.d("qs_parseClockSinXML", "startAngle-" + parser.getText());
+                                                                    if(parser.next() == XmlPullParser.TEXT)
+                                                                    {
+                                                                        clock.setStartAngle(parser.getText());
+                                                                        Log.d("qs_parseClockSinXML", "startAngle-" + parser.getText());
+                                                                    }
+
                                                                     clockInfo = clock;
                                                                     eventType = parser.next();
                                                                     break;
                                                                 }
                                                             } else {
 
-                                                                clock.setMulrotate(parser.getText());
-                                                                Log.d("qs_parseClockSinXML", "mulrotate-" + parser.getText());
+                                                                if(parser.next() == XmlPullParser.TEXT)
+                                                                {
+                                                                    clock.setMulrotate(parser.getText());
+                                                                    Log.d("qs_parseClockSinXML", "mulrotate-" + parser.getText());
+                                                                }
+
                                                                 clockInfo = clock;
                                                                 eventType = parser.next();
                                                                 break;
                                                             }
                                                         } else {
 
-                                                            clock.setArraytype(parser.getText());
-                                                            Log.d("qs_parseClockSinXML", "Arraytype-" + parser.getText());
+                                                            if(parser.next() == XmlPullParser.TEXT)
+                                                            {
+                                                                clock.setArraytype(parser.getText());
+                                                                Log.d("qs_parseClockSinXML", "Arraytype-" + parser.getText());
+                                                            }
+
                                                             clockInfo = clock;
                                                             eventType = parser.next();
                                                             break;
                                                         }
                                                     } else {
 
-                                                        clock.setAngle(parser.getText());
-                                                        Log.d("qs_parseClockSinXML", "angle-" + parser.getText());
+                                                        if(parser.next() == XmlPullParser.TEXT)
+                                                        {
+                                                            clock.setAngle(parser.getText());
+                                                            Log.d("qs_parseClockSinXML", "angle-" + parser.getText());
+                                                        }
+
                                                         clockInfo = clock;
                                                         eventType = parser.next();
                                                         break;
                                                     }
                                                 } else {
 
-                                                    clock.setRotate(parser.getText());
-                                                    Log.d("qs_parseClockSinXML", "rotate-" + parser.getText());
+                                                    if(parser.next() == XmlPullParser.TEXT)
+                                                    {
+                                                        clock.setRotate(parser.getText());
+                                                        Log.d("qs_parseClockSinXML", "rotate-" + parser.getText());
+                                                    }
+
                                                     clockInfo = clock;
                                                     eventType = parser.next();
                                                     break;
                                                 }
                                             } else {
 
-                                                clock.setCenterY(parser.getText());
-                                                Log.d("qs_parseClockSinXML", "CenterY-" + parser.getText());
+                                                if(parser.next() == XmlPullParser.TEXT)
+                                                {
+                                                    clock.setCenterY(parser.getText());
+                                                    Log.d("qs_parseClockSinXML", "CenterY-" + parser.getText());
+                                                }
+
                                                 clockInfo = clock;
                                                 eventType = parser.next();
                                                 break;
                                             }
                                         } else {
 
-                                            clock.setCenterX(parser.getText());
-                                            Log.d("qs_parseClockSinXML", "CenterX-" + parser.getText());
+                                            if(parser.next() == XmlPullParser.TEXT)
+                                            {
+                                                clock.setCenterX(parser.getText());
+                                                Log.d("qs_parseClockSinXML", "CenterX-" + parser.getText());
+                                            }
+
                                             clockInfo = clock;
                                             eventType = parser.next();
                                             break;
                                         }
                                     } else {
-                                        eventType = parser.next();
-                                        String name = parser.getText();
-                                        Log.d("qs_parseClockSinXML", "name-" + name);
 
-                                        clock.setName(name);
-                                        if (!name.endsWith(".xml")) {
-                                            clock.setNamepng(getDrawableRes(r2, pkg2, name));
-                                            clockInfo = clock;
-                                            //eventType = parser.next();
-                                            break;
-                                        } else {
-                                            String namexml = name.split("\\.")[0];
-                                            Log.d("qs_parseClockSinXML", "namexml-" + namexml);
-                                            parseXML(r2, pkg2, namexml, clock);
-                                            clockInfo = clock;
+                                        String name;
+                                        if(parser.next() == XmlPullParser.TEXT)
+                                        {
+                                            name = parser.getText();
+                                            Log.d("qs_parseClockSinXML", "name-" + name);
 
-                                            break;
+                                            clock.setName(name);
+                                            if (!name.endsWith(".xml")) {
+                                                clock.setNamepng(getDrawableRes(r2, pkg2, name));
+                                                clockInfo = clock;
+                                                eventType = parser.next();
+                                                break;
+                                            } else {
+                                                String namexml = name.split("\\.")[0];
+                                                Log.d("qs_parseClockSinXML", "namexml-" + namexml);
+                                                parseXML(r2, pkg2, namexml, clock);
+                                                clockInfo = clock;
+                                                eventType = parser.next();
+                                                break;
+                                            }
                                         }
+
 
                                     }
                                 } else {
+                                    boolean smoothRun;
+                                    if(parser.next() == XmlPullParser.TEXT)
+                                    {
+                                        smoothRun = !parser.getText().equals("false");
+                                        this.mClockSkinConfigure.setSmoothRun(smoothRun);
+                                        this.mSecondHandDuring = smoothRun ? this.mSecondHandDuring : 1000;
+                                        Log.d("qs_parseClockSinXML", "smooth-" + parser.getText());
+                                    }
 
-                                    boolean smoothRun = !parser.getText().equals("false");
-                                    this.mClockSkinConfigure.setSmoothRun(smoothRun);
-                                    this.mSecondHandDuring = smoothRun ? this.mSecondHandDuring : 1000;
-                                    Log.d("qs_parseClockSinXML", "smooth-" + parser.getText());
                                     clockInfo = clock;
                                     eventType = parser.next();
                                     break;
