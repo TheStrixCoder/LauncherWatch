@@ -48,10 +48,8 @@
         android:name="android.permission.WRITE_CALL_LOG"/>
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
 
-    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
-    <uses-feature android:name="android.software.live_wallpaper" />
-    <uses-permission android:name="android.permission.BIND_WALLPAPER"
-        tools:ignore="ProtectedPermissions" />
+
+
 
 
 
@@ -70,14 +68,14 @@
                 <action android:name="android.service.notification.NotificationListenerService"/>
             </intent-filter>
         </service>
-        <service android:name=".MyWallpaperService"
-            android:permission="android.permission.BIND_WALLPAPER">
+
+        <service android:name="MyWallpaperService"
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:enabled="true">
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService"/>
             </intent-filter>
-            <meta-data android:name="android.service.wallpaper" android:resource="@xml/magicsmoke" />
         </service>
-
 
         <activity android:clearTaskOnLaunch="true" android:configChanges="fontScale|layoutDirection|locale|mcc|mnc|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:label="@string/title_activity_main" android:launchMode="singleTask" android:name="com.bid.launcherwatch.MainActivity" android:screenOrientation="nosensor" android:stateNotNeeded="true" android:theme="@style/AppTheme" android:windowSoftInputMode="adjustPan">
             <intent-filter>

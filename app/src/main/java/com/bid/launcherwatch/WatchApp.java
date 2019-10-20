@@ -37,6 +37,7 @@ import android.service.wallpaper.WallpaperService;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -77,7 +78,7 @@ public class WatchApp extends Application {
     private static int mStepsTarget = 8000;
     private static int mUnreadPhone = 0;
     private static int mUnreadSMS = 0;
-    private static WallpaperConnection mWallpaperConnection;
+    private static MyWallpaperService.WallpaperConnection mWallpaperConnection;
     private static int mclockIndex = 0;
     public static ArrayList<installedClock> minstalledClocks = new ArrayList<>();
     private static WatchApp sWatchApp;
@@ -99,8 +100,6 @@ public class WatchApp extends Application {
 
         private boolean connect() {
             synchronized (this) {
-                //myWallpaperService=new MyWallpaperService(mContext,mIntent,mClockHost,this);
-                this.mContext.startService(mIntent);
                 if (!this.mContext.bindService(this.mIntent, this, Context.BIND_AUTO_CREATE)) {
                     return false;
                 }
@@ -183,6 +182,10 @@ public class WatchApp extends Application {
     public void onCreate() {
         sWatchApp = this;
         super.onCreate();
+        Intent wallpaperService=new Intent("android.service.wallpaper.WallpaperService");
+        wallpaperService.setClassName("com.bid.launcherwatch","com.bid.launcherwatch.MyWallpaperService");
+        this.startService(wallpaperService);
+        //Log.e("wall", "connect3");
         Log.d("WatchApp", "onCreate, WatchApp init ");
     }
 
@@ -321,7 +324,7 @@ public class WatchApp extends Application {
             mDialog.dismiss();
         }
         if (mWallpaperConnection != null && mWallpaperConnection.mConnected) {
-            //mWallpaperConnection.disconnect();
+            mWallpaperConnection.disconnect();
             mWallpaperConnection = null;
             Log.e("wall", "disconnect");
         }
@@ -329,23 +332,33 @@ public class WatchApp extends Application {
             Log.e("wall", "connect1");
             if (mWallpaperConnection == null) {
                 installedClock clockskin = (installedClock) getInstalledClocks().get(index);
+                Log.e("wall", "connect2");
                 //Intent mWallpaperIntent = new Intent(WallpaperService.SERVICE_INTERFACE);
                 //Log.d("TTTTTTTTTTTTTTTT:",clockskin.pkg  +" "+clockskin.serviceName);
 
                 //mWallpaperIntent.setPackage("com.bid.launcherwatch");
-                Intent mWallpaperIntent=new Intent("android.service.wallpaper.WallpaperService");
-                mWallpaperIntent.setPackage("com.bid.launcherwatch");
-                //mWallpaperIntent.setClassName(clockskin.pkg,clockskin.serviceName);
-                //mWallpaperIntent.setComponent(new ComponentName(clockskin.pkg, clockskin.serviceName));
-                //mWallpaperIntent.putExtra("package",clockskin.pkg);
-                //mWallpaperIntent.putExtra("service",clockskin.serviceName);
-                context.startService(mWallpaperIntent);
-                //mWallpaperConnection = new WallpaperConnection(context, mWallpaperIntent, mClockHost);
-//                if (mWallpaperConnection != null && !mWallpaperConnection.connect()) {
+//                Intent mWallpaperIntent=new Intent("android.service.wallpaper.WallpaperService");
+//                mWallpaperIntent.setPackage("com.bid.launcherwatch");
+//                //mWallpaperIntent.setPackage("com.bid.launcherwatch");
+//                //mWallpaperIntent.setClassName(clockskin.pkg,clockskin.serviceName);
+//                mWallpaperIntent.setComponent(new ComponentName(clockskin.pkg, clockskin.serviceName));
+//                //mWallpaperIntent.putExtra("package",clockskin.pkg);
+//                //mWallpaperIntent.putExtra("service",clockskin.serviceName);
+//                //context.startService(mWallpaperIntent);
+               // mWallpaperConnection = new MyWallpaperService.WallpaperConnection(context, mClockHost);
+//                if (!mWallpaperConnection.connect()) {
 //                    mWallpaperConnection = null;
 //                }
-                //context.bindService(mWallpaperIntent,mWallpaperConnection,Context.BIND_AUTO_CREATE);
-                Log.e("wall", "connect");
+//                //context.bindService(mWallpaperIntent,mWallpaperConnection,Context.BIND_AUTO_CREATE);
+//                Log.e("wall", "connect");
+
+                Intent in = new Intent();
+                in.setAction("broadcast.to.service.class");
+                in.putExtra("package", clockskin.pkg);
+                in.putExtra("service",clockskin.serviceName);
+                //in.p("classConnection",mWallpaperConnection);
+                //Log.e("SSSSSSSSSSSSSSSSSS:",clockskin.pkg +"  "+clockskin.serviceName);
+                LocalBroadcastManager.getInstance(context).sendBroadcast(in);
             }
             if (((installedClock) getInstalledClocks().get(index)).type.equals("liveClockSkin")) {
                 mClockHost.removeAllViews();
