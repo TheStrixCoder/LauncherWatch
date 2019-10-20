@@ -8,7 +8,7 @@ MAIN_ACTIVITY="MainActivity"
 ADB="adb" # how you execute adb
 ADB_SH="$ADB shell su -c" # this script assumes using `adb root`. for `adb su` see `Caveats`
 
-path_sysapp="/system/app" # assuming the app is priviledged
+path_sysapp="/system/priv-app" # assuming the app is priviledged
 apk_host="./app/build/outputs/apk/debug/app-debug.apk"
 apk_name=$dir_app_name".apk"
 apk_target_dir="$path_sysapp/$dir_app_name"
