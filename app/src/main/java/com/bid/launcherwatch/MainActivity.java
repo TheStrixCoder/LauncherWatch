@@ -33,7 +33,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
-import android.support.v7.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -80,6 +80,7 @@ public class MainActivity extends FragmentActivity {
             }
         }
     };
+
     FrameLayout mClockHost;
     private CustomDigitalClockSave mClockSaveView;
     private float mConfigurationFontScale;

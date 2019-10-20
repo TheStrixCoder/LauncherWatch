@@ -14,13 +14,14 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v7.widget.AppCompatImageView;
+
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.widget.ImageView;
 
 import com.bid.launcherwatch.R;
 
-public class RoundImageView extends AppCompatImageView {
+public class RoundImageView extends ImageView {
     private Paint mBitmapPaint = new Paint();
     private BitmapShader mBitmapShader;
     private int mBorderRadius;
@@ -37,7 +38,7 @@ public class RoundImageView extends AppCompatImageView {
         this.mBitmapPaint.setAntiAlias(true);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundImageView);
         this.mBorderRadius = a.getDimensionPixelSize(0, (int) TypedValue.applyDimension(1, 10.0f, getResources().getDisplayMetrics()));
-        this.type = a.getInt(1, 0);
+        this.type = a.getInt(R.styleable.RoundImageView_type, 0);
         a.recycle();
     }
 

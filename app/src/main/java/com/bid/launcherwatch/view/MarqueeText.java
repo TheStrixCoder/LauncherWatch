@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class MarqueeText extends android.support.v7.widget.AppCompatTextView {
+public class MarqueeText extends TextView {
     public MarqueeText(Context paramContext) {
         super(paramContext);
     }

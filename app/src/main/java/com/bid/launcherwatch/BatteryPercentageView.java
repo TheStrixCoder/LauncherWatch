@@ -9,7 +9,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class BatteryPercentageView extends android.support.v7.widget.AppCompatTextView {
+public class BatteryPercentageView extends TextView {
     private int[] mColors;
     private final BroadcastReceiver mIntentReceiver;
 

@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class DateView extends android.support.v7.widget.AppCompatTextView {
+public class DateView extends TextView {
     private final Date mCurrentTime = new Date();
     /* access modifiers changed from: private */
     public SimpleDateFormat mDateFormat;

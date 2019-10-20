@@ -28,7 +28,7 @@
     </style>
     <style name="AppTheme">
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="windowNoTitle">true</item>
+<!--        <item name="windowNoTitle">true</item>-->
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
@@ -36,17 +36,17 @@
     <style name="NotificationButtonWithOutBG">
         <item name="android:textSize">28dp</item>
         <item name="android:textColor">#ff252525</item>
-        <item name="background">@android:color/transparent</item>
+<!--        <item name="background">@android:color/transparent</item>-->
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">38dp</item>
         <item name="android:layout_marginBottom">2dp</item>
     </style>
     <style name="NotificationButton">
-        <item name="background">@drawable/notification_button</item>
+<!--        <item name="background">@drawable/notification_button</item>-->
         <item name="android:layout_height">70dp</item>
     </style>
     <style name="NotificationRoundButton">
-        <item name="background">@drawable/notification_button_round</item>
+<!--        <item name="background">@drawable/notification_button_round</item>-->
     </style>
     <style name="NotificationEventTime">
         <item name="android:textSize">18dp</item>
@@ -60,7 +60,7 @@
     </style>
     <style name="OnlineFontPreview">
         <item name="android:windowBackground">@drawable/alert_dialog_bg4</item>
-        <item name="windowNoTitle">true</item>
+<!--        <item name="windowNoTitle">true</item>-->
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:backgroundDimEnabled">false</item>
@@ -92,6 +92,6 @@
         <item name="android:minHeight">30dp</item>
     </style>
     <style name="quicksettings_button_style">
-        <item name="background">@drawable/music_key</item>
+<!--        <item name="background">@drawable/music_key</item>-->
     </style>
 </resources>

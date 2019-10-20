@@ -6,14 +6,14 @@
         android:icon="@drawable/crop_image_menu_rotate_left"
         android:title="@string/crop_image_menu_rotate_left"
         android:visible="false"
-        app:showAsAction="ifRoom"/>
+        android:showAsAction="ifRoom"/>
     <item
         android:id="@+id/crop_image_menu_rotate_right"
         android:icon="@drawable/crop_image_menu_rotate_right"
         android:title="@string/crop_image_menu_rotate_right"
-        app:showAsAction="ifRoom"/>
+        android:showAsAction="ifRoom"/>
     <item
         android:id="@+id/crop_image_menu_crop"
         android:title="@string/crop_image_menu_crop"
-        app:showAsAction="always"/>
+        android:showAsAction="always"/>
 </menu>

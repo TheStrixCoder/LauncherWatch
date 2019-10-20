@@ -14,7 +14,7 @@
                 </RelativeLayout>
                 <TextView android:textSize="28dp" android:textColor="#ffffffff" android:ellipsize="end" android:gravity="center" android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_marginStart="6dp" android:layout_marginEnd="6dp"/>
                 <TextView android:textSize="28dp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@+id/text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="16dp" android:maxLines="3" android:singleLine="false" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
-                <ImageButton android:id="@+id/options" app:srcCompat="@drawable/notification_expand" android:text="@string/options" style="@style/NotificationButtonWithOutBG"/>
+                <ImageButton android:id="@+id/options" android:src="@drawable/notification_expand" android:text="@string/options" style="@style/NotificationButtonWithOutBG"/>
                 <Button android:id="@+id/action1" android:visibility="gone" style="@style/NotificationButton"/>
                 <Button android:id="@+id/action2" android:visibility="gone" style="@style/NotificationButton"/>
                 <Button android:id="@+id/action3" android:visibility="gone" style="@style/NotificationButton"/>

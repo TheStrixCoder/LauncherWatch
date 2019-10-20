@@ -14,7 +14,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateTimeView extends android.support.v7.widget.AppCompatTextView {
+public class DateTimeView extends TextView {
     private boolean mAttachedToWindow;
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {

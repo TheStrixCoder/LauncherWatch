@@ -405,6 +405,18 @@
     <string name="crop_image_menu_rotate_left">反时针旋转</string>
     <string name="crop_image_menu_rotate_right">旋转</string>
     <string name="crop_image_menu_crop">裁剪</string>
+    <string name="wallpapers">Magic Smoke Wallpapers</string>
 
+    <!-- Wallpapers showing smoke, clouds, water, plasmas -->
+    <string name="wallpaper_magicsmoke">Magic Smoke</string>
+
+    <string name="author">Google</string>
+    <string name="magicsmoke_desc">Draws smoke, clouds, water and plasmas.</string>
+
+    <!-- button label -->
+
+
+    <!-- overlay text -->
+    <string name="taptochange">Tap to change</string>
     <string name="saving_image">截图保存中...</string>
 </resources>

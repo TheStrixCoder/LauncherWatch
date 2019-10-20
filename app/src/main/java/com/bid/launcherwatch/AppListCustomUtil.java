@@ -132,7 +132,7 @@ public class AppListCustomUtil {
     public static Drawable ReplaceAppIcon(Context context, String cls) {
         String cls2 = cls.toLowerCase(Locale.US).replace(".", "_").replace("$", "_");
         Log.v("caojinliang", "AppListCustomUtil::icon_id=" + cls2);
-        int iconID = context.getResources().getIdentifier(cls2.toString(), "mipmap", "com.mediatek.watchapp");
+        int iconID = context.getResources().getIdentifier(cls2.toString(), "mipmap", "com.bid.launcherwatch");
         Log.i("AppListCustomUtil", "iconID = " + iconID);
         if (iconID == 0) {
             return null;
